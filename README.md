@@ -34,9 +34,9 @@ python Statistical_Tests.py
 In this fulder (main branch) you can find all the cods that I needed for solving memory computer issue, marge data and trial codes.
 
 In the script branch you will fing the scripts:
-├── scripts/               # All scripts for data analysis
-├── separate_file.py
-├── Identifying_Roosting_Locations.py
-├── Social_Interaction_Analysis.py
-├── Roosting_Locations_on_a_Map.py
-└── Statistical_Tests.py
+  # All scripts for data analysis
+1. separate_file.py
+2. Identifying_Roosting_Locations.py
+3. Social_Interaction_Analysis.py
+4. Roosting_Locations_on_a_Map.py
+5. Statistical_Tests.py
