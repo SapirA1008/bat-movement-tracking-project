@@ -31,24 +31,12 @@ Statistical Validation of Social Interactions:
 Statistical tests can be applied to validate the social interactions. The Statistical_Tests.py script analyzes whether the detected groupings occur more frequently than expected by chance:
 python Statistical_Tests.py
 
-Folder Structure
-bat-movement-tracking-project/
-│
-├── data/                  # Contains bat movement and interaction datasets
-│   ├── filtered_bat_data_cleaned.csv
-│   ├── valid_data.csv
-│   └── stationary_bouts.csv
-│
+In this fulder (main branch) you can find all the cods that I needed for solving memory computer issue, marge data and trial codes.
+
+In the script branch you will fing the scripts:
 ├── scripts/               # All scripts for data analysis
-│   ├── separate_file.py
-│   ├── Identifying_Roosting_Locations.py
-│   ├── Social_Interaction_Analysis.py
-│   ├── Roosting_Locations_on_a_Map.py
-│   └── Statistical_Tests.py
-│
-├── results/               # Output files generated after running the analysis
-│   ├── bat_data_with_kmeans_clusters.csv
-│   ├── social_interactions.csv
-│   └── roosting_locations_map.html
-│
-└── README.md              # This file (project description and instructions)
+├── separate_file.py
+├── Identifying_Roosting_Locations.py
+├── Social_Interaction_Analysis.py
+├── Roosting_Locations_on_a_Map.py
+└── Statistical_Tests.py
