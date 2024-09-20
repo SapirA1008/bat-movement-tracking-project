@@ -1,62 +1,54 @@
-Bat Movement Tracking Project
-Project Description
-The Bat Movement Tracking Project analyzes GPS tracking data collected from bats using the ATLAS system. The primary objective is to explore the movement patterns, foraging habits, roosting locations, and potential social interactions of bats. The project aims to develop algorithms that can differentiate between movement and stationary bouts, identify frequent roosting and foraging locations, and detect possible social interactions between bats based on proximity.
+Instructions for Running the Project
+Prerequisites
+Python 3.x installed on your system.
 
-This project is crucial for understanding the ecological behavior of bats, including how they use their environment and interact with each other. These insights can aid conservation efforts and further the scientific study of bat species and their habitat usage.
-
-Key Features:
-GPS Data Analysis: Processing high-resolution GPS tracking data to study bat movement.
-Roosting and Foraging Identification: Identifying habitual locations for roosting and foraging.
-Social Interaction Detection: Detecting proximity-based social interactions between bats.
-Data Clustering: Using DBSCAN and KMeans algorithms to cluster bat movement data and identify patterns.
-Installation and Setup Instructions
-Prerequisites:
-Python 3.8 or above
-A terminal or command line interface (CLI)
-Git for cloning the repository
-Required Libraries:
-Ensure that the following Python libraries are installed:
-
-pandas
-numpy
-scikit-learn
-folium
-matplotlib
-You can install these dependencies by running the following command:
+Install the required libraries by running the following command:
 pip install -r requirements.txt
+The requirements.txt file includes necessary dependencies such as pandas, scikit-learn, folium, matplotlib, numpy, joblib, and dask.
 
-Setup and Run Instructions:
-Clone the repository: First, clone the project repository to your local machine using Git:
+Running the Project
+Data Preprocessing and Filtering:
 
-git clone https://github.com/SapirA1008/bat-movement-tracking-project.git
-Navigate to the project folder: Once the repository is cloned, move into the project directory:
-cd bat-movement-tracking-project
+The script separate_file.py processes the raw bat data and filters it into valid and invalid data based on speed and distance thresholds.
+To run the script, use:
+python separate_file.py
+Detect Roosting and Foraging Locations:
 
-Install the dependencies: To install all the required libraries, run:
-pip install -r requirements.txt
-
-Preprocess the Bat Data: Before running any analysis, clean and preprocess the raw bat GPS data using the following script:
-python data_cleaning.py
-
-Running the Analysis Scripts:
-1. Roosting and Foraging Location Identification:
-To identify frequent roosting and foraging locations based on the GPS data, run the following script:
-
-
+Run the Identifying_Roosting_Locations.py script to cluster bat locations and detect potential roosting or foraging sites:
 python Identifying_Roosting_Locations.py
-The results, including visual maps, will be saved to the results/maps/ directory.
+The resulting clusters are saved, and frequent roosting locations are highlighted.
+Social Interaction Detection:
 
-2. Social Interaction Detection:
-To detect social interactions between bats based on GPS data proximity, use:
-
+To detect possible social interactions between bats, run the Social_Interaction_Analysis.py script:
 python Social_Interaction_Analysis.py
-This will output interaction logs, indicating when and where bats were near each other, suggesting possible social behavior.
+This will identify instances where bats were in close proximity at the same time, indicating potential social interactions.
+Visualize Roosting Locations:
 
-3. Statistical Validation of Social Groupings:
-To apply statistical tests and determine whether the social groupings detected are significant or random, run:
+To visualize the roosting locations on a map, run:
+python Roosting_Locations_on_a_Map.py
+Statistical Validation of Social Interactions:
 
+Statistical tests can be applied to validate the social interactions. The Statistical_Tests.py script analyzes whether the detected groupings occur more frequently than expected by chance:
 python Statistical_Tests.py
-Output Files:
-results/roosting_locations.csv: Contains the identified roosting and foraging clusters.
-results/social_interactions.csv: Logs detailing detected social interactions between bats.
-results/maps/: Contains maps showing roosting and foraging clusters.
+
+Folder Structure
+bat-movement-tracking-project/
+│
+├── data/                  # Contains bat movement and interaction datasets
+│   ├── filtered_bat_data_cleaned.csv
+│   ├── valid_data.csv
+│   └── stationary_bouts.csv
+│
+├── scripts/               # All scripts for data analysis
+│   ├── separate_file.py
+│   ├── Identifying_Roosting_Locations.py
+│   ├── Social_Interaction_Analysis.py
+│   ├── Roosting_Locations_on_a_Map.py
+│   └── Statistical_Tests.py
+│
+├── results/               # Output files generated after running the analysis
+│   ├── bat_data_with_kmeans_clusters.csv
+│   ├── social_interactions.csv
+│   └── roosting_locations_map.html
+│
+└── README.md              # This file (project description and instructions)
